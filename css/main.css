@@ -66,6 +66,7 @@ body {
 	background: #431297;
 	position: fixed;
 	bottom: 0;
+	overflow: auto;
 }
 
 .container .details .item {
@@ -79,6 +80,7 @@ body {
 	background: #432126;
 	position: fixed;
 	bottom: 0;
+	overflow: auto;
 }
 
 .container .chat .item {

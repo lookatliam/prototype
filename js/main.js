@@ -20,9 +20,14 @@ function main() {
 	$(".details").height(blocksHeight);
 	$(".chat").height(blocksHeight);
 
+	jQuery(function() {
+		jQuery('.scroll-pane').jScrollPane();
+	});
+	$(".details").scrollTop(10000);
+	$(".chat").scrollTop(10000);
+
 	//margin left function
 	var leftMargin = (windowWidth - containerWidth)/2 + windowClassWidth;
-	console.log("leftMargin: "+leftMargin);
 	var leftCenterMargin = (windowWidth - containerWidth)/2 + windowClassWidth + $(".details").width();
 	$(".details").css({"left": leftMargin});
 	$(".chat").css({"left": leftCenterMargin});
@@ -32,7 +37,6 @@ function main() {
 		$(".details").hide();
 		$(".chat").hide();
 		$(".window").width(containerWidth);
-		console.log("minimum\n"+"windowWidth: "+windowWidth+"\ncontainerWidth: "+containerWidth);
 	} else if(windowWidth >= 900 && windowWidth < 1300) {
 		$(".details").show();
 		$(".chat").hide();
@@ -40,7 +44,6 @@ function main() {
 		coef = containerWidth/2;
 		$(".window").width(coef*1.25);
 		$(".details").width(coef*0.75);
-		console.log("center\n"+"windowWidth: "+windowWidth+"\ncontainerWidth: "+containerWidth);
 	} else if (windowWidth >= 1300) {
 		$(".details").show();
 		$(".chat").show();
@@ -48,7 +51,6 @@ function main() {
 		$(".window").width(coef*1.54);
 		$(".details").width(coef*1.23);
 		$(".chat").width(coef*1.23);
-		console.log("large\n"+"windowWidth: "+windowWidth+"\ncontainerWidth: "+containerWidth);
 	}
 }
 $(window).scroll(function() {
@@ -67,11 +69,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
-
-$(".logo").click(function() {
-	main();
+jQuery(function() {
+	jQuery('.scroll-pane').jScrollPane();
 });

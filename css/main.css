@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	background: #000;
 }
 
 .top {
@@ -54,7 +55,6 @@ body {
 }
 
 .container .window {
-	
 	background: #433221;
 	float: left;
 
@@ -63,7 +63,6 @@ body {
 }
 
 .container .details {
-	
 	background: #431297;
 	position: fixed;
 	bottom: 0;

@@ -1,0 +1,90 @@
+body {
+	margin: 0;
+}
+
+.top {
+	height: 60px;
+	width: 100%;
+	background: #643294;
+	position: fixed;
+	z-index: 100;
+}
+
+.top .logo {
+	width: 200px;
+	height: 40px;
+	background: #493431;
+	margin: 0 10px 0;
+	float: left;
+}
+
+.top .user {
+	width: 200px;
+	height: 40px;
+	background: #893763;
+	margin: 0 10px 0;
+	float: right;
+}
+
+.top .navi {
+	width: 300px;
+	height: 40px;
+	background: #765211;
+	margin: 10px auto 0;
+}
+
+.sector {
+	height: 180px;
+	width: 100%;
+	background: #129783;
+	padding-top: 60px;
+}
+
+.menu {
+	height: 60px;
+	width: 100%;
+	background: #981363;
+}
+
+.container {
+	width: 100%;
+	min-width: 900px;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.container .window {
+	
+	background: #433221;
+	float: left;
+
+	text-align: center;
+	color: #fff;
+}
+
+.container .details {
+	
+	background: #431297;
+	position: fixed;
+	bottom: 0;
+}
+
+.container .details .item {
+	width: 200px;
+	height: 100px;
+	background: #531789;
+	margin: 40px;
+}
+
+.container .chat {
+	background: #432126;
+	position: fixed;
+	bottom: 0;
+}
+
+.container .chat .item {
+	width: 200px;
+	height: 100px;
+	background: #531789;
+	margin: 40px;
+}

@@ -53,13 +53,16 @@ function main() {
 }
 $(window).scroll(function() {
 	main();
+	main();
 });
 
 $(window).resize(function() {
 	main();
+	main();
 });
 
 $(document).ready(function() {
+	main();
 	main();
 });
 

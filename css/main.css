@@ -5,9 +5,10 @@ body {
 }
 
 .top {
-	height: 60px;
+	height: 50px;
 	width: 100%;
 	background: url('../img/opacity_bg.png');
+	padding: 10px 0 0;
 	position: fixed;
 	z-index: 100;
 }
@@ -137,9 +138,8 @@ body {
 .top .navi {
 	width: 280px;
 	height: 50px;
-	margin: 10px auto 0;
+	float: left;
 	position: relative;
-	left: -60px;
 }
 
 .top .navi ul li {
@@ -166,7 +166,7 @@ body {
 	text-decoration: none;
 }
 
-.sector {
+.filter {
 	height: 180px;
 	width: 100%;
 	padding-top: 60px;
@@ -219,4 +219,18 @@ body {
 	height: 100px;
 	background: #531789;
 	margin: 40px;
+}
+
+@media (max-width: 1000px) {
+	.top .user {
+		width: 300px;
+	}
+
+	.top .user .buyin {
+		display: none;
+	}
+
+	.top .user .visitcard {
+		display: none;
+	}
 }

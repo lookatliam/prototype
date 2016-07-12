@@ -16,6 +16,9 @@ function main() {
 	//scroll functions
 	if (blocksHeight >= maxHeight) {
 		blocksHeight = maxHeight;
+		$(".top").addClass("top-fix");
+	} else {
+		$(".top").removeClass("top-fix");
 	}
 	$(".details").height(blocksHeight);
 	$(".chat").height(blocksHeight);
@@ -31,6 +34,11 @@ function main() {
 	var leftCenterMargin = (windowWidth - containerWidth)/2 + windowClassWidth + $(".details").width();
 	$(".details").css({"left": leftMargin});
 	$(".chat").css({"left": leftCenterMargin});
+
+	var leftTopMargin = (windowWidth - $(".logo").width() - $(".user").width() - $(".navi").width())/2;
+	if(windowWidth > 900) {
+		$(".navi").css({"left":leftTopMargin});
+	}
 
 	//adaptive block functions
 	if(windowWidth < 900) {

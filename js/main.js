@@ -9,7 +9,7 @@ function main() {
 	var windowWidth = $(window).width();
 	var windowClassWidth = $(".window").width();
 	var maxHeight = windowHeight - $(".top").height();
-	var blocksHeight = windowHeight + $(this).scrollTop() - 300;
+	var blocksHeight = windowHeight + $(this).scrollTop() - 260;
 	var containerWidth = $(".container").width();
 	var coef;
 
@@ -101,4 +101,26 @@ $(".navi > ul > li > a").click(function() {
 	$(".navi > ul > li").removeClass("active");
 	$(this).parent().addClass("active");
 	return false;
+});
+
+//local functions 
+
+$(".toggleSwitches").click(function() {
+	$(this).toggleClass("active");
+	$(".switches").toggle();
+	$(".filters").toggleClass("activeMargin");
+});
+
+$(".delivery-switch").click(function() {
+	$(this).toggleClass("active");
+});
+
+$(".one-or-company input").click(function() {
+	$(".one-or-company input").removeClass("active");
+	$(this).addClass("active");
+});
+
+$(".preorder-or-instock input").click(function() {
+	$(".preorder-or-instock input").removeClass("active");
+	$(this).addClass("active");
 });

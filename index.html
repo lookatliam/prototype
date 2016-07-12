@@ -42,7 +42,46 @@
 	</header>
 	<div class="container">
 		<section class="filter">
-			
+			<div class="filters activeMargin">
+				<form action="#" method="POST">
+					<input type="button" class="add-med" value="Меда">
+					<div class="add-bee-container">
+						<input type="button" class="add-bee" value="Пчелопродукты">
+						<p class="add-bee-addition">Выбрано: <span>5</span></p>
+					</div>
+					<input type="button" class="add-other" value="другое">
+					<select class="add-season">
+						<option>Сезон</option>
+						<option>Март</option>
+						<option>Апрель</option>
+					</select>
+					<div class="add-price-container">
+						<input type="text" class="from" placeholder="от">
+						<input type="text" class="to" placeholder="до">
+					</div>
+					<input type="button" class="delivery-switch" value="доставка до ТК">
+					<input type="button" value=" " class="toggleSwitches">
+					<div class="add-filters-container">
+						<input type="submit" class="add-all-filters" value="Подобрать">
+						<input type="reset" class="reset-all-filters" value="Очистить фильтр">
+					</div>
+				</form>
+			</div>
+			<div class="switches">
+				<div class="one-or-company">
+					<input type="button" class="one active" value="Частники">
+					<input type="button" class="company" value="Компании">
+				</div>
+				<div class="preorder-or-instock">
+					<input type="button" class="preorder active" value="Предзаказ">
+					<input type="button" class="instock" value="В наличии">
+				</div>
+
+				<div class="add-region-container">
+					<input type="button" class="add-region" value="Область">
+					<!--<p class="add-region-addition"><span>5</span> областей</p>-->
+				</div>
+			</div>
 		</section>
 		<nav class="menu"></nav>
 	</div>

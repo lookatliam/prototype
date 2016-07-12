@@ -72,3 +72,25 @@ $(document).ready(function() {
 jQuery(function() {
 	jQuery('.scroll-pane').jScrollPane();
 });
+
+//other page events
+$(".add-bookmark").click(function() {
+	$(this).toggleClass("active-bookmark");
+	return false;
+});
+
+$(".add-visitcard").click(function() {
+	$(this).toggleClass("active-card");
+	return false;
+});
+
+$(".add-buyin").click(function() {
+	$(this).toggleClass("active-buyin");
+	return false;
+});
+
+$(".navi > ul > li > a").click(function() {
+	$(".navi > ul > li").removeClass("active");
+	$(this).parent().addClass("active");
+	return false;
+});

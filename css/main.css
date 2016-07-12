@@ -1,43 +1,174 @@
 body {
 	margin: 0;
-	background: #000;
+	background: url('../img/body_bg.jpg') no-repeat;
+	background-size: cover;
 }
 
 .top {
 	height: 60px;
 	width: 100%;
-	background: #643294;
+	background: url('../img/opacity_bg.png');
 	position: fixed;
 	z-index: 100;
 }
 
+.top-fix {
+	background: #fff;
+}
+
 .top .logo {
-	width: 200px;
+	width: 226px;
 	height: 40px;
-	background: #493431;
+	background: url('../img/logo.png') left center no-repeat;
 	margin: 0 10px 0;
 	float: left;
 }
 
+.top .logo h1 {
+	color: #000;
+	font-family: Calibri;
+	font-size: 25px;
+	font-weight: bold;
+	margin: 8px 0 -2px;
+	padding: 0;
+	float: right;
+}
+
+.top .logo p {
+	color: #000;
+	font-family: Calibri;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+
 .top .user {
-	width: 200px;
+	width: 440px;
 	height: 40px;
-	background: #893763;
 	margin: 0 10px 0;
 	float: right;
 }
 
-.top .navi {
-	width: 300px;
+.top .user .info {
+	float: right;
+}
+
+.top .user .info .avatar {
+	width: 40px;
 	height: 40px;
-	background: #765211;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+}
+
+.top .user .info .avatar img {
+	width: 40px;
+	height: 40px;
+}
+
+.top .user .info .name {
+	width: 100px;
+	height: 14px;
+	color: #000;
+	font-family: Arial;
+	font-size: 12px;
+	float: left;
+	margin: 14px 0 0 10px;
+	overflow: hidden;
+}
+
+.top .user .bookmark-page {
+	float: right;
+}
+
+.top .user .bookmark-page .add-bookmark {
+	width: 14px;
+	height: 18px;
+	background: url('../img/top-bookmark_bg.png') 0 0 no-repeat;
+	margin: 12px 10px 0;
+	display: block;
+}
+
+.top .user .bookmark-page .active-bookmark {
+	background-position: -14px 0;
+}
+
+.top .user .visitcard {
+	float: right;
+}
+
+.top .user .visitcard .add-visitcard {
+	color: #000;
+	font-family: Arial;
+	font-size: 12px;
+	background: url('../img/visit-card_bg.png') left center no-repeat;
+	margin: 6px 5px;
+	padding: 8px 6px 6px 30px;
+	border-radius: 2px;
+	text-decoration: none;
+	display: block;
+}
+
+.top .user .visitcard .active-card {
+	background: url('../img/visit-card_bg.png') left center no-repeat #f2c36d;
+}
+
+.top .user .buyin {
+	float: right;
+}
+
+.top .user .buyin .add-buyin {
+	color: #000;
+	font-family: Arial;
+	font-size: 12px;
+	background: url('../img/buyin_bg.png') left center no-repeat;
+	margin: 6px 5px;
+	padding: 8px 6px 6px 36px;
+	border-radius: 2px;
+	text-decoration: none;
+	display: block;
+}
+
+.top .user .buyin .active-buyin {
+	background: url('../img/buyin_bg.png') left center no-repeat #f2c36d;
+}
+
+.top .navi {
+	width: 280px;
+	height: 50px;
 	margin: 10px auto 0;
+	position: relative;
+	left: -60px;
+}
+
+.top .navi ul li {
+	margin: 10px 15px 0;
+	padding: 0 4px 22px;
+	float: left;
+}
+
+.top .navi ul li.separator {
+	width: 33px;
+	height: 21px;
+	background: url('../img/navi-separator_bg.png') center center no-repeat;
+	padding: 0;
+}
+
+.top .navi ul li.active {
+	border-bottom: 2px solid #cc3333;
+}
+
+.top .navi ul li a {
+	color: #333;
+	font-family: Arial;
+	font-size: 16px;
+	text-decoration: none;
 }
 
 .sector {
 	height: 180px;
 	width: 100%;
-	background: #129783;
 	padding-top: 60px;
 }
 

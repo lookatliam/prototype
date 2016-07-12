@@ -1,15 +1,10 @@
-//test function html append
-for(var n = 0; n < 100; n++) {
-	$(".window").append(n+"<br>")
-}
-
 function main() {
 	//var params
 	var windowHeight = $(window).height();
 	var windowWidth = $(window).width();
 	var windowClassWidth = $(".window").width();
 	var maxHeight = windowHeight - $(".top").height();
-	var blocksHeight = windowHeight + $(this).scrollTop() - 260;
+	var blocksHeight = windowHeight + $(this).scrollTop() - 250;
 	var containerWidth = $(".container").width();
 	var coef;
 
@@ -45,20 +40,28 @@ function main() {
 		$(".details").hide();
 		$(".chat").hide();
 		$(".window").width(containerWidth);
+		$(".in-buyin").width(containerWidth);
+		$(".menu > .addition").hide();
 	} else if(windowWidth >= 900 && windowWidth < 1300) {
 		$(".details").show();
 		$(".chat").hide();
 
 		coef = containerWidth/2;
 		$(".window").width(coef*1.25);
+		$(".in-buyin").width(coef*1.25);
 		$(".details").width(coef*0.75);
+		$(".menu > .addition").width(coef*0.75-1);
+		$(".menu > .addition > .mini-menu").width(coef*0.75-1);
 	} else if (windowWidth >= 1300) {
 		$(".details").show();
 		$(".chat").show();
 		coef = containerWidth/4;
 		$(".window").width(coef*1.54);
+		$(".in-buyin").width(coef*1.54);
 		$(".details").width(coef*1.23);
 		$(".chat").width(coef*1.23);
+		$(".menu > .addition").width(coef*2.46 - 1);
+		$(".menu > .addition > .mini-menu").width(coef*1.23);
 	}
 }
 $(window).scroll(function() {

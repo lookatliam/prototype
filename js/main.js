@@ -16,19 +16,22 @@ function main() {
 		$(".top").removeClass("top-fix");
 	}
 	$(".details").height(blocksHeight);
-	$(".chat").height(blocksHeight);
+	$(".details > .price-block").height(blocksHeight);
+	$(".talk").height(blocksHeight-139);
+	$(".talk").css({"bottom":"98px"});
 
 	jQuery(function() {
 		jQuery('.scroll-pane').jScrollPane();
 	});
-	$(".details").scrollTop(10000);
-	$(".chat").scrollTop(10000);
+	$(".details > .price-block").scrollTop(10000);
+	$(".talk").scrollTop(10000);
 
 	//margin left function
 	var leftMargin = (windowWidth - containerWidth)/2 + windowClassWidth;
 	var leftCenterMargin = (windowWidth - containerWidth)/2 + windowClassWidth + $(".details").width();
 	$(".details").css({"left": leftMargin});
-	$(".chat").css({"left": leftCenterMargin});
+	$(".talk").css({"left": leftCenterMargin+1});
+	$(".chat > .writing").css({"left": leftCenterMargin+1});
 
 	var leftTopMargin = (windowWidth - $(".logo").width() - $(".user").width() - $(".navi").width())/2;
 	if(windowWidth > 900) {
@@ -64,9 +67,15 @@ function main() {
 		$(".menu > .addition > .mini-menu").width(coef*1.23);
 	}
 
+	$(".talk").width($(".chat").width()-1);
+	$(".chat > .writing").width($(".chat").width()-1);
+	$(".chat > .writing > .input-text").width($(".chat").width()-11);
+	$(".chat > .selection").width($(".chat").width());
+	$(".chat > .selection").css({"bottom":blocksHeight-41, "left":leftCenterMargin});
+
 	var productWidth = $(".window").width() - $('.product-img').outerWidth(true) - 20;
-		$(".product-content").width(productWidth);
-		$(".window > .price-product > .product-content > .product-addition > .description").width(productWidth - 90);
+	$(".product-content").width(productWidth);
+	$(".window > .price-product > .product-content > .product-addition > .description").width(productWidth - 90);
 }
 $(window).scroll(function() {
 	main();

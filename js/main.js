@@ -3,17 +3,19 @@ function main() {
 	var windowHeight = $(window).height();
 	var windowWidth = $(window).width();
 	var windowClassWidth = $(".window").width();
-	var maxHeight = windowHeight - $(".top").height() - 10;
-	var blocksHeight = windowHeight + $(this).scrollTop() - 250;
+	var maxHeight = windowHeight-50;
+	var blocksHeight = windowHeight + $(this).scrollTop()-310;
 	var containerWidth = $(".container").width();
 	var coef;
 
 	//scroll functions
 	if (blocksHeight >= maxHeight) {
 		blocksHeight = maxHeight;
-		$(".top").addClass("top-fix");
+		$(".menu").addClass("fix-menu");
+		$("body").addClass("body-fixed");
 	} else {
-		$(".top").removeClass("top-fix");
+		$(".menu").removeClass("fix-menu");
+		$("body").removeClass("body-fixed");
 	}
 	$(".details").height(blocksHeight);
 	$(".details > .price-block").height(blocksHeight);
@@ -23,7 +25,7 @@ function main() {
 	jQuery(function() {
 		jQuery('.scroll-pane').jScrollPane();
 	});
-	$(".details > .price-block").scrollTop(10000);
+	//$(".details > .price-block").scrollTop(10000);
 	$(".talk").scrollTop(10000);
 
 	//margin left function
@@ -40,21 +42,24 @@ function main() {
 
 	//adaptive block functions
 	if(windowWidth < 900) {
-		$(".details").hide();
 		$(".chat").hide();
-		$(".window").width(containerWidth);
-		$(".in-buyin").width(containerWidth);
+		$(".window").width(containerWidth/2);
+		$(".details").width(containerWidth/2);
+		$(".in-buyin").width(containerWidth/2);
 		$(".menu > .addition").hide();
 	} else if(windowWidth >= 900 && windowWidth < 1300) {
-		$(".details").show();
-		$(".chat").hide();
+		
+		
+			$(".details").show();
+			$(".chat").hide();
 
-		coef = containerWidth/2;
-		$(".window").width(coef*1.25);
-		$(".in-buyin").width(coef*1.25);
-		$(".details").width(coef*0.75 - 1);
-		$(".menu > .addition").width(coef*0.75-1);
-		$(".menu > .addition > .mini-menu").width(coef*0.75-1);
+			coef = containerWidth/2;
+			$(".window").width(coef*1.25);
+			$(".in-buyin").width(coef*1.25);
+			$(".details").width(coef*0.75 - 1);
+			$(".menu > .addition").width(coef*0.75-1);
+			$(".menu > .addition > .mini-menu").width(coef*0.75-1);
+		
 	} else if (windowWidth >= 1300) {
 		$(".details").show();
 		$(".chat").show();
@@ -65,6 +70,7 @@ function main() {
 		$(".chat").width(coef*1.23);
 		$(".menu > .addition").width(coef*2.46 - 1);
 		$(".menu > .addition > .mini-menu").width(coef*1.23);
+		$(".write-message").hide();
 	}
 
 	$(".talk").width($(".chat").width()-1);
@@ -73,9 +79,17 @@ function main() {
 	$(".chat > .selection").width($(".chat").width());
 	$(".chat > .selection").css({"bottom":blocksHeight-41, "left":leftCenterMargin});
 
+	if(windowWidth >= 900 && windowWidth < 1300) {
+		$(".chat > .selection").css({"left":leftMargin});
+	}
+
+
+
 	var productWidth = $(".window").width() - $('.product-img').outerWidth(true) - 20;
-	$(".product-content").width(productWidth);
+	$(".window > .price-product > .product-content").width(productWidth);
 	$(".window > .price-product > .product-content > .product-addition > .description").width(productWidth - 90);
+	$(".category-container > .price-product > .product-content").width($(".category-container > .price-product").outerWidth() - 80);
+	$(".category-container > .price-product > .product-content > .product-addition > .description").width($(".category-container > .price-product > .product-content").width()-80);
 }
 $(window).scroll(function() {
 	main();
@@ -146,6 +160,11 @@ $(".price-product").click(function() {
 });
 
 $(".window > .price-product > .product-img > .bookmark").click(function() {
+	$(this).toggleClass("active-bookmark");
+	return false;
+});
+
+$(".price-product > .product-img > .bookmark").click(function() {
 	$(this).toggleClass("active-bookmark");
 	return false;
 });
